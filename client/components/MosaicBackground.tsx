@@ -78,7 +78,7 @@ export default function MosaicBackground() {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900"></div>
 
       {/* Mosaic container */}
-      <div className="absolute inset-0 grid grid-cols-4 gap-3 p-4 opacity-40">
+      <div className="absolute inset-0 grid grid-cols-4 gap-3 p-4 opacity-60">
         {photos.map((photo) => (
           <div
             key={photo.id}
