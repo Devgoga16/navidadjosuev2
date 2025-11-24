@@ -9,6 +9,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import ParticipantDashboard from "./pages/ParticipantDashboard";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
+import MosaicBackground from "@/components/MosaicBackground";
 
 const queryClient = new QueryClient();
 
