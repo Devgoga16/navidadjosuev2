@@ -171,7 +171,7 @@ export default function AdminDashboard() {
         {/* Draw Button */}
         {!hasDrawn && (
           <Card className="border-2 border-orange-500/40 shadow-lg mb-8 bg-slate-800/70 backdrop-blur-sm">
-            <CardHeader border-b border-orange-500/20">
+            <CardHeader className="border-b border-orange-500/20">
               <CardTitle className="text-blue-200">
                 Realizar Sorteo
               </CardTitle>
@@ -198,7 +198,7 @@ export default function AdminDashboard() {
         {/* Draw Results */}
         {hasDrawn && drawResults.length > 0 && (
           <Card className="border-2 border-green-500/40 shadow-lg mb-8 bg-slate-800/70 backdrop-blur-sm">
-            <CardHeader border-b border-green-500/20>
+            <CardHeader className="border-b border-green-500/20">
               <CardTitle className="text-green-400">
                 ✓ Sorteo Completado
               </CardTitle>
@@ -230,7 +230,7 @@ export default function AdminDashboard() {
 
         {/* Participants Table */}
         <Card className="border-2 border-blue-500/40 shadow-lg bg-slate-800/70 backdrop-blur-sm">
-          <CardHeader border-b border-blue-500/20>
+          <CardHeader className="border-b border-blue-500/20">
             <CardTitle className="text-blue-200">
               Participantes Registrados
             </CardTitle>
