@@ -67,7 +67,7 @@ export default function MosaicBackground() {
 
         return newSet;
       });
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
