@@ -100,12 +100,9 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      {/* Mosaic Background */}
-      <MosaicBackground />
-
+    <div className="min-h-screen flex flex-col items-center justify-center p-4">
       {/* Content Container */}
-      <div className="relative z-10">
+      <div>
         {/* Header with group name */}
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-400 bg-clip-text text-transparent mb-2">
