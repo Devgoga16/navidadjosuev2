@@ -82,7 +82,7 @@ export default function MosaicBackground() {
         {photos.map((photo) => (
           <div
             key={photo.id}
-            className={`relative overflow-hidden rounded-lg transform transition-all duration-700 ease-in-out ${
+            className={`relative overflow-hidden rounded-lg transform transition-all duration-400 ease-in-out ${
               visiblePhotos.has(photo.id)
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-95"
