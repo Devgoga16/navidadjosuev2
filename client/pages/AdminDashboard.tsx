@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { LogOut, Users, Play } from "lucide-react";
+import BibleVerse, { getVerseByTheme } from "@/components/BibleVerse";
 
 export default function AdminDashboard() {
   const { user, logout } = useAuth();
@@ -14,6 +15,8 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasDrawn, setHasDrawn] = useState(false);
   const [drawResults, setDrawResults] = useState<DrawResult[]>([]);
+
+  const verse = getVerseByTheme("harmony");
 
   useEffect(() => {
     if (user?.role !== "admin") {
@@ -76,31 +79,34 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-red-50 to-yellow-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <header className="bg-gradient-to-r from-amber-100 to-red-100 shadow-lg border-b-4 border-red-700">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Panel Administrador
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-amber-700 to-red-700 bg-clip-text text-transparent">
+              Familia Josué
             </h1>
-            <p className="text-gray-600 text-sm mt-1">Gestiona el sorteo</p>
+            <p className="text-red-700 font-semibold mt-1">Panel Administrador</p>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right">
-              <p className="font-semibold text-gray-900">{user?.name}</p>
-              <p className="text-sm text-gray-600">{user?.email}</p>
+              <p className="font-semibold text-red-900">{user?.name}</p>
+              <p className="text-sm text-red-700">{user?.email}</p>
             </div>
             <Button
               onClick={handleLogout}
               variant="outline"
               size="sm"
-              className="gap-2"
+              className="gap-2 text-red-700 border-red-300 hover:bg-red-50"
             >
               <LogOut size={18} />
               Cerrar Sesión
             </Button>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-6 pb-4">
+          <BibleVerse verse={verse.verse} reference={verse.reference} />
         </div>
       </header>
 
@@ -108,38 +114,38 @@ export default function AdminDashboard() {
       <main className="max-w-7xl mx-auto px-6 py-8">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="border-0 shadow-lg">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gray-600 flex items-center gap-2">
-                <Users size={20} className="text-purple-600" />
+          <Card className="border-2 border-amber-200 shadow-lg">
+            <CardHeader className="pb-3 bg-gradient-to-r from-amber-50 to-red-50">
+              <CardTitle className="text-sm font-medium text-red-800 flex items-center gap-2">
+                <Users size={20} className="text-red-700" />
                 Participantes
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-gray-900">
+              <div className="text-3xl font-bold text-amber-700">
                 {participants.length}
               </div>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-red-600 mt-1">
                 Registrados en el sistema
               </p>
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-lg">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gray-600">
+          <Card className="border-2 border-amber-200 shadow-lg">
+            <CardHeader className="pb-3 bg-gradient-to-r from-amber-50 to-red-50">
+              <CardTitle className="text-sm font-medium text-red-800">
                 Estado del Sorteo
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div
                 className={`text-3xl font-bold ${
-                  hasDrawn ? "text-green-600" : "text-amber-600"
+                  hasDrawn ? "text-green-600" : "text-amber-700"
                 }`}
               >
                 {hasDrawn ? "Completado" : "Pendiente"}
               </div>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-red-600 mt-1">
                 {hasDrawn
                   ? "Sorteo realizado"
                   : "Esperando para ejecutar sorteo"}
@@ -147,27 +153,27 @@ export default function AdminDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="border-0 shadow-lg">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gray-600">
+          <Card className="border-2 border-amber-200 shadow-lg">
+            <CardHeader className="pb-3 bg-gradient-to-r from-amber-50 to-red-50">
+              <CardTitle className="text-sm font-medium text-red-800">
                 Fecha del Evento
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-gray-900">5 Dic</div>
-              <p className="text-xs text-gray-500 mt-1">2025</p>
+              <div className="text-3xl font-bold text-red-700">5 Dic</div>
+              <p className="text-xs text-red-600 mt-1">2025</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Draw Button */}
         {!hasDrawn && (
-          <Card className="border-0 shadow-lg mb-8 bg-gradient-to-r from-purple-50 to-cyan-50">
+          <Card className="border-2 border-amber-300 shadow-lg mb-8 bg-gradient-to-r from-amber-50 to-red-50">
             <CardHeader>
-              <CardTitle>Realizar Sorteo</CardTitle>
+              <CardTitle className="text-red-900">Realizar Sorteo</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600 mb-4">
+              <p className="text-red-700 mb-4">
                 {participants.length < 2
                   ? "Se necesitan al menos 2 participantes registrados"
                   : `Están registrados ${participants.length} participantes. ¿Listo para hacer el sorteo?`}
@@ -175,7 +181,7 @@ export default function AdminDashboard() {
               <Button
                 onClick={handleDraw}
                 disabled={isLoading || participants.length < 2}
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-semibold gap-2"
+                className="bg-gradient-to-r from-amber-700 to-red-700 hover:from-amber-800 hover:to-red-800 text-white font-semibold gap-2"
                 size="lg"
               >
                 <Play size={20} />
@@ -187,7 +193,7 @@ export default function AdminDashboard() {
 
         {/* Draw Results */}
         {hasDrawn && drawResults.length > 0 && (
-          <Card className="border-0 shadow-lg mb-8 bg-green-50">
+          <Card className="border-2 border-green-300 shadow-lg mb-8 bg-gradient-to-r from-green-50 to-emerald-50">
             <CardHeader>
               <CardTitle className="text-green-900">
                 ✓ Sorteo Completado
@@ -218,18 +224,18 @@ export default function AdminDashboard() {
         )}
 
         {/* Participants Table */}
-        <Card className="border-0 shadow-lg">
-          <CardHeader>
-            <CardTitle>Participantes Registrados</CardTitle>
+        <Card className="border-2 border-amber-200 shadow-lg">
+          <CardHeader className="bg-gradient-to-r from-amber-50 to-red-50">
+            <CardTitle className="text-red-900">Participantes Registrados</CardTitle>
           </CardHeader>
           <CardContent>
             {participants.length === 0 ? (
               <div className="py-12 text-center">
-                <Users size={48} className="mx-auto text-gray-300 mb-4" />
-                <p className="text-gray-500">
+                <Users size={48} className="mx-auto text-amber-200 mb-4" />
+                <p className="text-red-700 font-medium">
                   Aún no hay participantes registrados
                 </p>
-                <p className="text-sm text-gray-400 mt-2">
+                <p className="text-sm text-red-600 mt-2">
                   Los participantes aparecerán aquí cuando se registren
                 </p>
               </div>
@@ -237,17 +243,17 @@ export default function AdminDashboard() {
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                    <tr className="border-b-2 border-amber-300">
+                      <th className="px-4 py-3 text-left text-sm font-semibold text-red-900">
                         Nombre
                       </th>
-                      <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-4 py-3 text-left text-sm font-semibold text-red-900">
                         Correo
                       </th>
-                      <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-4 py-3 text-left text-sm font-semibold text-red-900">
                         Teléfono
                       </th>
-                      <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900">
+                      <th className="px-4 py-3 text-left text-sm font-semibold text-red-900">
                         Fecha de Registro
                       </th>
                     </tr>
@@ -256,18 +262,18 @@ export default function AdminDashboard() {
                     {participants.map((participant) => (
                       <tr
                         key={participant.id}
-                        className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                        className="border-b border-amber-100 hover:bg-amber-50 transition-colors"
                       >
-                        <td className="px-4 py-3 text-sm text-gray-900">
+                        <td className="px-4 py-3 text-sm text-red-900 font-medium">
                           {participant.name}
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-600">
+                        <td className="px-4 py-3 text-sm text-red-700">
                           {participant.email}
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-600">
+                        <td className="px-4 py-3 text-sm text-red-700">
                           {participant.phone}
                         </td>
-                        <td className="px-4 py-3 text-sm text-gray-500">
+                        <td className="px-4 py-3 text-sm text-red-600">
                           {new Date(participant.createdAt).toLocaleDateString(
                             "es-ES",
                             {
@@ -288,6 +294,17 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
       </main>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-red-700 to-amber-700 text-white mt-12 py-6">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <p className="text-sm mb-2">
+            "¡Mira qué bueno y qué agradable es que los hermanos convivan en
+            armonía!"
+          </p>
+          <p className="text-xs opacity-90">Salmos 133:1</p>
+        </div>
+      </footer>
     </div>
   );
 }
