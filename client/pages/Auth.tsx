@@ -93,13 +93,13 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-red-50 to-yellow-50 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-yellow-50 to-green-50 flex flex-col items-center justify-center p-4">
       {/* Header with group name */}
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-amber-700 to-red-700 bg-clip-text text-transparent mb-2">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-emerald-700 to-green-700 bg-clip-text text-transparent mb-2">
           Familia Josué
         </h1>
-        <p className="text-red-800 font-semibold text-lg mb-4">
+        <p className="text-emerald-800 font-semibold text-lg mb-4">
           Sistema de Sorteo - Amigo Secreto
         </p>
         <BibleVerse verse={verse.verse} reference={verse.reference} className="max-w-2xl mx-auto" />
@@ -107,12 +107,12 @@ export default function Auth() {
 
       {/* Auth Card */}
       <div className="w-full max-w-md">
-        <Card className="shadow-xl border-2 border-amber-200">
-          <CardHeader className="space-y-1 bg-gradient-to-r from-amber-50 to-red-50">
-            <CardTitle className="text-2xl text-amber-900">
+        <Card className="shadow-xl border-2 border-green-200">
+          <CardHeader className="space-y-1 bg-gradient-to-r from-green-50 to-yellow-50">
+            <CardTitle className="text-2xl text-emerald-900">
               {isLogin ? "Iniciar Sesión" : "Registro"}
             </CardTitle>
-            <CardDescription className="text-red-700">
+            <CardDescription className="text-emerald-700">
               {isLogin
                 ? "Ingresa con tu cuenta para continuar"
                 : "Crea una nueva cuenta para participar"}
