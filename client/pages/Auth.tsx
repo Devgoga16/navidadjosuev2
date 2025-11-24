@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/card";
 import { toast } from "sonner";
 import BibleVerse, { getVerseByTheme } from "@/components/BibleVerse";
+import MosaicBackground from "@/components/MosaicBackground";
+import { SkeletonText, SkeletonInput, SkeletonButton } from "@/components/SkeletonLoader";
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
