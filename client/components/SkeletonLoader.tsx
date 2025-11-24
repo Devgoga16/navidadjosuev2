@@ -51,7 +51,9 @@ export function SkeletonButton({
   );
 }
 
-export function SkeletonCard({ className = "" }: Omit<SkeletonProps, "variant">) {
+export function SkeletonCard({
+  className = "",
+}: Omit<SkeletonProps, "variant">) {
   return (
     <div className={`bg-slate-800/50 rounded-lg p-6 space-y-4 ${className}`}>
       <SkeletonText width="w-1/3" height="h-8" />

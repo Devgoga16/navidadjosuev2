@@ -13,7 +13,11 @@ import {
 } from "@/components/ui/card";
 import { toast } from "sonner";
 import BibleVerse, { getVerseByTheme } from "@/components/BibleVerse";
-import { SkeletonText, SkeletonInput, SkeletonButton } from "@/components/SkeletonLoader";
+import {
+  SkeletonText,
+  SkeletonInput,
+  SkeletonButton,
+} from "@/components/SkeletonLoader";
 
 export default function Auth() {
   const [isLogin, setIsLogin] = useState(true);
@@ -320,8 +324,8 @@ export default function Auth() {
             Bendiciones para "Familia Josué"
           </p>
           <p className="text-sm italic text-blue-200">
-            "Que la paz de Cristo reine en vuestros corazones, a la cual asimismo
-            fuisteis llamados en un solo cuerpo."
+            "Que la paz de Cristo reine en vuestros corazones, a la cual
+            asimismo fuisteis llamados en un solo cuerpo."
           </p>
           <p className="text-xs text-blue-300 mt-1">Colosenses 3:15</p>
         </div>

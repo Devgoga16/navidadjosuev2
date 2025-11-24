@@ -108,7 +108,11 @@ export default function AdminDashboard() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pb-4">
-          <BibleVerse verse={verse.verse} reference={verse.reference} className="text-blue-100" />
+          <BibleVerse
+            verse={verse.verse}
+            reference={verse.reference}
+            className="text-blue-100"
+          />
         </div>
       </header>
 
@@ -172,9 +176,7 @@ export default function AdminDashboard() {
         {!hasDrawn && (
           <Card className="border-2 border-orange-500/40 shadow-lg mb-8 bg-slate-800/70 backdrop-blur-sm">
             <CardHeader className="border-b border-orange-500/20">
-              <CardTitle className="text-blue-200">
-                Realizar Sorteo
-              </CardTitle>
+              <CardTitle className="text-blue-200">Realizar Sorteo</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-blue-300 mb-4">

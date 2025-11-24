@@ -127,7 +127,11 @@ export default function ParticipantDashboard() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 pb-4">
-          <BibleVerse verse={verse.verse} reference={verse.reference} className="text-blue-100" />
+          <BibleVerse
+            verse={verse.verse}
+            reference={verse.reference}
+            className="text-blue-100"
+          />
         </div>
       </header>
 
@@ -209,7 +213,9 @@ export default function ParticipantDashboard() {
                         </div>
 
                         {/* Separator */}
-                        <div className="text-3xl text-blue-400/50 font-light self-start mt-6">:</div>
+                        <div className="text-3xl text-blue-400/50 font-light self-start mt-6">
+                          :
+                        </div>
 
                         {/* Hours */}
                         <div className="flex flex-col items-center">
@@ -224,7 +230,9 @@ export default function ParticipantDashboard() {
                         </div>
 
                         {/* Separator */}
-                        <div className="text-3xl text-cyan-400/50 font-light self-start mt-6">:</div>
+                        <div className="text-3xl text-cyan-400/50 font-light self-start mt-6">
+                          :
+                        </div>
 
                         {/* Minutes */}
                         <div className="flex flex-col items-center">
@@ -239,7 +247,9 @@ export default function ParticipantDashboard() {
                         </div>
 
                         {/* Separator */}
-                        <div className="text-3xl text-purple-400/50 font-light self-start mt-6">:</div>
+                        <div className="text-3xl text-purple-400/50 font-light self-start mt-6">
+                          :
+                        </div>
 
                         {/* Seconds */}
                         <div className="flex flex-col items-center">

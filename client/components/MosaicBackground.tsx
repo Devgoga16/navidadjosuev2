@@ -42,7 +42,7 @@ const photos: MosaicPhoto[] = [
 
 export default function MosaicBackground() {
   const [visiblePhotos, setVisiblePhotos] = useState<Set<number>>(
-    new Set([1, 2, 3, 4])
+    new Set([1, 2, 3, 4]),
   );
 
   useEffect(() => {
@@ -58,8 +58,7 @@ export default function MosaicBackground() {
         if (hiddenPhotos.length > 0) {
           const randomHidden =
             hiddenPhotos[Math.floor(Math.random() * hiddenPhotos.length)];
-          const randomVisible =
-            arr[Math.floor(Math.random() * arr.length)];
+          const randomVisible = arr[Math.floor(Math.random() * arr.length)];
 
           newSet.delete(randomVisible);
           newSet.add(randomHidden);
