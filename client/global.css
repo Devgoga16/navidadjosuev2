@@ -132,29 +132,42 @@
   }
 }
 
-/* Smooth transitions */
+/* Smooth transitions & animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 @layer utilities {
   .transition-all-smooth {
     @apply transition-all duration-300 ease-in-out;
   }
 
   .gradient-primary {
-    @apply bg-gradient-to-r from-emerald-600 to-green-600;
+    @apply bg-gradient-to-r from-blue-600 to-blue-500;
   }
 
   .gradient-primary-hover {
-    @apply hover:from-emerald-700 hover:to-green-700;
+    @apply hover:from-blue-700 hover:to-blue-600;
   }
 
-  .gradient-festive {
-    @apply bg-gradient-to-br from-green-50 via-yellow-50 to-green-50;
+  .gradient-accent {
+    @apply bg-gradient-to-r from-orange-500 to-orange-400;
   }
 
-  .text-gold {
-    @apply text-amber-700;
+  .gradient-accent-hover {
+    @apply hover:from-orange-600 hover:to-orange-500;
   }
 
-  .text-green-festive {
-    @apply text-emerald-800;
+  .text-primary {
+    @apply text-blue-400;
+  }
+
+  .text-accent {
+    @apply text-orange-400;
   }
 }
